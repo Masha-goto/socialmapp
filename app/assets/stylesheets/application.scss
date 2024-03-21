@@ -1,0 +1,61 @@
+@import 'form';
+@import 'buttons';
+
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background-color: #fff;
+  font-size: 1em;
+  color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: #9e9e9e;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+  padding: 16px 16px;
+  width: 100%;
+}
+
+.float_btn {
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+	i {
+		margin-top: 22px;
+	}
+}
+
+.hidden {
+	display: none;
+}
