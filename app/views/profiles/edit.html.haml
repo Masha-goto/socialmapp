@@ -5,13 +5,13 @@
 
 	= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
 		%div
-			= f.label :avatar, 'アバター'
+			= f.label :avatar, 'Avatar'
 		%div
 			= f.file_field :avatar
 		%div
-			= f.label :account, 'アカウント'
+			= f.label :account, 'Account', class: 'text-label'
 		%div
 			= f.text_field :account, class: 'text'
 		%div
 
-		= f.submit '保存', class: ''
+		= f.submit 'preservation', class: 'btn-primary'
