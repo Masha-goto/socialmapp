@@ -5,6 +5,9 @@
 				= link_to :back do
 					= image_tag 'arrow.svg', class: 'header_back'
 			.header_account
-				= @profile.account
-	.profile_icon
+				= current_user.account
+-if user_signed_in?
+	.profile_icon.dropdown
 		= image_tag @profile.user.avatar_image
+		.dropdown-content.mini
+			= link_to 'Edit', edit_profile_path
