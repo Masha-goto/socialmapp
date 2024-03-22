@@ -12,19 +12,20 @@ select {
 label {
   font-size: 11px;
 	color: #979797;
+
+	&.text-label {
+		display: inline-block;
+		margin-top: 10px;
+	}
 }
 
-textarea,
-trix-editor {
+textarea {
   width: 100%;
   margin: 8px 0px;
   padding: 8px 8px;
   min-height: 440px;
   resize: vertical;
   border: 1px solid #EBEBEB;
-	&.sm {
-		min-height: 160px;
-	}
 }
 
 .text-path {
@@ -36,3 +37,4 @@ trix-editor {
 		margin-top: 16px;
 	}
 }
+
