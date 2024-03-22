@@ -1,0 +1,18 @@
+.container
+	%ul
+		- post.errors.full_messages.each do |message|
+			%li= message
+	= form_with(model: post, local: true) do |f|
+		-# %div
+		-# 	= f.label :eyecatch, 'アイキャッチ'
+		-# %div
+		-# 	= f.file_field :eyecatch
+		%div
+			= f.label :title, 'Title'
+		%div
+			= f.text_field :title, class: 'text'
+		%div
+			= f.label :content, 'Content'
+		%div
+			= f.text_area :content
+		= f.submit 'preservation', class: 'btn-primary'

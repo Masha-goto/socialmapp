@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
 	validates :account, presence: true, length: { minimum: 2 }
 
+
+	has_many :posts, dependent: :destroy
 	has_one :profile, dependent: :destroy
 
 	def prepare_profile
