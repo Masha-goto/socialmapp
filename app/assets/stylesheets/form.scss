@@ -38,3 +38,38 @@ textarea {
 	}
 }
 
+.header_text {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 700;
+}
+
+.text_link {
+	&:first-child {
+		color: #2F80ED;
+	}
+}
+
+.post_form {
+	display: flex;
+	margin-top: 40px;
+	gap: 18px;
+
+	div {
+		display: flex;
+		align-items: center;
+		height: 40px;
+	}
+
+	img {
+		width: 40px;
+		height: 40px;
+	}
+
+	p {
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+
+
