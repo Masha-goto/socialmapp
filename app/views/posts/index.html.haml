@@ -15,10 +15,11 @@
 						.post_time
 							= time_ago_in_words(post.created_at)
 				.post_content
-				- if post.images.attached?
-					- post.images.each do |image|
-						.post_image
-							= image_tag(image)
+					- if post.images.attached?
+						- post.images.each do |image|
+							.post_image
+								= image_tag(image)
+				.post_content_item
 					- if user_signed_in?
 						.post_like.hidden.active-like
 							= image_tag 'like-active.svg'
@@ -27,7 +28,7 @@
 						.post_group
 							= image_tag 'Group.svg'
 						.post_share
-							= image_tag 'share.svg'
+							= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
 				.post_title
 					%p= post.title
 					%p= post.content
