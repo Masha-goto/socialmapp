@@ -1,0 +1,30 @@
+.container
+	%header.header
+		.header_icon.header_text
+			- if !current_page?(root_path)
+				= link_to 'Cance', :back, class: 'text_link'
+				.header_title
+					= 'Status'
+				= link_to 'Post', posts_path, class: 'text_link'
+		.post
+			.post_form
+				= image_tag current_user.avatar_image
+				%div
+					%p= current_user.account
+	%ul
+		- post.errors.full_messages.each do |message|
+			%li= message
+	= form_with(model: post, local: true) do |f|
+		%div
+			= f.label :images, 'Img'
+		%div
+			= f.file_field :images, multiple: true
+		%div
+			= f.label :title, 'Title'
+		%div
+			= f.text_field :title, class: 'text', placeholder:"What's on your mind ?"
+		%div
+			= f.label :content, 'Content'
+		%div
+			= f.text_area :content
+		= f.submit 'preservation', class: 'btn-primary'
