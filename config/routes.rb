@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
 	resource :profile, only: %i(show edit update)
 
-	resources :posts
+	resources :posts do
+		resource :like, only: %i(show create destroy)
+	end
+
+
 end
