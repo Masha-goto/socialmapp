@@ -5,11 +5,16 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.3.0",
+    "@rails/webpacker": "5.4.3",
     "axios": "^1.6.8",
     "jquery": "^3.7.1",
+    "node-sass": "^9.0.0",
     "rails-ujs": "^5.2.8-1",
     "turbolinks": "^5.2.0"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "@webpack-cli/serve": "^2.0.5",
+    "webpack-dev-server": "~3"
+  }
 }

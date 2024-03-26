@@ -8,10 +8,10 @@
 		= link_to post_path(post) do
 			.post
 				.post_detail
-					= image_tag current_user.avatar_image
+					= image_tag post.user.avatar_image
 					%div
 						.post_name
-							= current_user.account
+							= post.user.account
 						.post_time
 							= time_ago_in_words(post.created_at)
 				.post_content
@@ -21,10 +21,9 @@
 								= image_tag(image)
 				.post_content_item
 					- if user_signed_in?
-						.post_like.hidden.active-like
+						.post_like.active-like
 							= image_tag 'like-active.svg'
-						.post_like.hidden.inactive-like
-							= image_tag 'like.svg'
+							%span= post.likes.count
 						.post_group
 							= image_tag 'Group.svg'
 						.post_share

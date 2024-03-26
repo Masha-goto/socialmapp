@@ -1,4 +1,4 @@
-.container
+.container#post-show{data: {post_id: @post.id}}
 	%header.header
 		.header_icon
 			- if !current_page?(root_path)
@@ -6,10 +6,10 @@
 					= image_tag 'photo-camera.svg', class: 'header_back'
 		.post
 			.post_detail
-				= image_tag current_user.avatar_image
+				= image_tag @post.user.avatar_image
 				%div
 					.post_name
-						= current_user.account
+						= @post.user.account
 					%p= time_ago_in_words(@post.created_at)
 			.post_content
 				- if @post.images.attached?
@@ -29,3 +29,5 @@
 			.post_title
 				%p= @post.title
 				%p= @post.content
+
+= javascript_pack_tag 'post'
