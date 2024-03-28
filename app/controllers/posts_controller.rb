@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
+		@comments = @post.comments
 	end
 
 	def new

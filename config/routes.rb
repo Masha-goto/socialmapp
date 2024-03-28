@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
 	resources :posts do
 		resource :like, only: %i(show create destroy)
+
+		resources :comments, only: %i(show new create)
 	end
 
 
