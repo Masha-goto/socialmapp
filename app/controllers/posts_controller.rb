@@ -7,7 +7,9 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@comments = @post.comments
+		@post =Post.includes(:user).find(params[:id])
+		@comments = @post.comments.includes(:user).all
+		@comment = @post.comments.build(user_id: current_user.id) if current_user
 	end
 
 	def new

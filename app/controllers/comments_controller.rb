@@ -3,7 +3,9 @@ class CommentsController < ApplicationController
 	before_action :authenticate_user!
 
 	def show
-		@comments = @post.comments
+		@post =Post.includes(:user).find(params[:id])
+		@comments = @post.comments.includes(:user).all
+		@comment = @post.comments.build(user_id: current_user.id) if current_user
 	end
 
 	def new
@@ -25,11 +27,11 @@ class CommentsController < ApplicationController
 
 	private
 	def comment_params
-		params.require(:comment).permit(:content)
+		params.require(:comment).permit(:content).merge(user_id: current_user.id, post_id: params[:post_id])
 	end
 
 	def set_post
 		@post = Post.find(params[:id])
-		@comment = Comment.find(params[:id])
+		# @comment = Comment.find(params[:id])
 	end
 end
