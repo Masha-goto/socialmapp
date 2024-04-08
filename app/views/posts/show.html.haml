@@ -23,12 +23,24 @@
 					.post_like.hidden.inactive-like
 						= image_tag 'like.svg'
 					.post_group
-						= link_to post_comment_path(@post) do
-							= image_tag 'Group.svg'
+						= image_tag 'Group.svg'
 					.post_share
 						= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
 			.post_title
 				%p= @post.title
 				%p= @post.content
+.container
+	%header.header
+		.header_icon
+			.header_title
+				%h2 Comment
+	.comments_container
+.form_container
+	.comment_text_area.show_comment_form
+		=	image_tag 'Group.svg', class: 'sm'
+	.comment_text_area_after.hidden
+		=	text_area_tag :comment_box, '', class: 'sm'
+		.btn-secondary.add-comment-button
+			コメントを追加
 
 = javascript_pack_tag 'post'

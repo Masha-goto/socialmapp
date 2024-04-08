@@ -47,14 +47,20 @@ $avatar-size: 30px;
     img {
       width: 16px;
       height: 16px;
+      cursor: pointer;
     }
   }
 
   &_like {
+    display: flex;
+		gap: 5px;
     // img {
     //   width: $heart-size;
     //   height: $heart-size;
     // }
+    span {
+      line-height: 1;
+    }
   }
 
   &_image {
@@ -66,6 +72,10 @@ $avatar-size: 30px;
       object-fit: cover;
     }
   }
+}
+
+.post_group {
+	display: flex;
 }
 
 .post_name {
