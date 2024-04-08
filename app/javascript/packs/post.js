@@ -1,8 +1,9 @@
 import $ from "jquery";
-import axios from "axios";
-import { csrfToken } from "@rails/ujs";
-
-axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
+import axios from "modules/axios";
+import {
+	listenInactiveLikeEvent,
+  listenActiveLikeEvent
+} from 'modules/handle_like'
 
 const handleLikedDisplay = (hasLiked) => {
   if (hasLiked) {
@@ -62,31 +63,6 @@ document.addEventListener("turbolinks:load", () => {
     handleLikedDisplay(hasLiked);
   });
 
-  $(".inactive-like").on("click", () => {
-    axios.post(`/posts/${postId}/like`)
-			.then((res) => {
-				if (res.data.status === 'ok') {
-					$('.active-like').removeClass('hidden')
-					$('.inactive-like').addClass('hidden')
-				}
-			})
-			.catch((e) => {
-				window.alert(`Error`)
-				console.log(e)
-			})
-  });
-
-  $('.active-like').on('click', () => {
-    axios.delete(`/posts/${postId}/like`)
-			.then((res) => {
-				if (res.data.status === 'ok') {
-					$('.active-like').addClass('hidden')
-					$('.inactive-like').removeClass('hidden')
-				}
-			})
-			.catch((e) => {
-				window.alert(`Error`)
-				console.log(e)
-			})
-  });
+	listenInactiveLikeEvent(postId)
+  listenActiveLikeEvent(postId)
 });
