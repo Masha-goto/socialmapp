@@ -5,29 +5,30 @@
 				= link_to new_post_path do
 					= image_tag 'photo-camera.svg', class: 'header_back'
 	- @posts.each do |post|
-		= link_to post_path(post) do
-			.post
-				.post_detail
-					= image_tag post.user.avatar_image
-					%div
-						.post_name
-							= post.user.account
-						.post_time
-							= time_ago_in_words(post.created_at)
-				.post_content
-					- if post.images.attached?
-						- post.images.each do |image|
-							.post_image
-								= image_tag(image)
-				.post_content_item
-					- if user_signed_in?
-						.post_like.active-like
+		.post
+			.post_detail
+				= image_tag post.user.avatar_image
+				%div
+					.post_name
+						= post.user.account
+					.post_time
+						= time_ago_in_words(post.created_at)
+			.post_content
+				- if post.images.attached?
+					- post.images.each do |image|
+						.post_image
+							= image_tag(image)
+			.post_content_item
+				- if user_signed_in?
+					.post_like.active-like
+						= link_to post_path(post) do
 							= image_tag 'like-active.svg'
-							%span= post.likes.count
-						.post_group
+						%span= post.likes.count
+					.post_group
+						= link_to post_path(post) do
 							= image_tag 'Group.svg'
-						.post_share
-							= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
-				.post_title
-					%p= post.title
-					%p= post.content
+					.post_share
+						= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
+			.post_title
+				%p= post.title
+				%p= post.content

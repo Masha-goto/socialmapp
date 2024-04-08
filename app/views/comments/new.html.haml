@@ -1,0 +1,8 @@
+%ul
+	- @comment.errors.full_messages.each do |message|
+		%li= message
+
+= form_with(model: @comment, url: post_comments_path(@comment.post), local: ture) do |f|
+	%div
+		= f.text_area :content
+	= f.submit 'preservation', class: 'btn-secondary'
