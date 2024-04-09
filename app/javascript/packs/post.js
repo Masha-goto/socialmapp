@@ -22,6 +22,9 @@ const handleCommentForm = () => {
 
 const appendNewComment = (comment) => {
 	$('.comments_container').append(
+		`<div class="post_account"><p>${comment.user.account}</p></div>`
+	)
+	$('.comments_container').append(
 		`<div class="post_comment"><p>${comment.content}</p></div>`
 	)
 }

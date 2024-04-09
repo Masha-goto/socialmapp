@@ -39,9 +39,15 @@ $avatar-size: 32px;
 	margin-top: 6px;
 }
 
-.post_comment {
+.post_account {
 	&:not(:first-child) {
 		margin-top: 32px;
 	}
+}
+
+.post_comment {
+	margin-top: 5px;
+	font-size: 14px;
+	color: #9B9B9B;
 }
 
