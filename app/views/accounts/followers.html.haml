@@ -1,0 +1,9 @@
+.container
+	%header.header
+		.header_icon
+			- if !current_page?(root_path)
+				= link_to :back do
+					= image_tag 'arrow.svg', class: 'header_back'
+			.header_title
+				%p= 'Followers'
+= render 'commons/follow', users: @users

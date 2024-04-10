@@ -6,13 +6,30 @@
 					= image_tag 'arrow.svg', class: 'header_back'
 			.user_account
 				= user.account
-	.profile_icon.dropdown
-		= image_tag user.avatar_image
-		.dropdown-content.mini
-			- if user == current_user
-				= link_to 'Edit', edit_profile_path
-			- else
-				-if current_user&.has_followed?(user)
-					= link_to 'Unfollow', account_unfollows_path(user), data: { method: 'post' }
+			.user_content
+				- if user == current_user
+					= link_to 'Edit', edit_profile_path
 				- else
-					= link_to 'Follow', account_follows_path(user), data: { method: 'post' }
+					-if current_user&.has_followed?(user)
+						= link_to 'Unfollow', account_unfollows_path(user), data: { method: 'post' }
+					- else
+						= link_to 'Follow', account_follows_path(user), data: { method: 'post' }
+	.profile_icon
+		= image_tag user.avatar_image
+.count_content
+	= link_to posts_path do
+		.count_items
+			.count_text
+				= user.posts.count
+			%p= 'Posts'
+	= link_to followers_account_path(user) do
+		.count_items
+			.count_text
+				= user.followers.count
+			%p= 'Followers'
+	= link_to followings_account_path(user) do
+		.count_items
+			.count_text
+				= user.followings.count
+			%p= 'Following'
+

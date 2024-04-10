@@ -1,5 +1,6 @@
 .header_icon {
 	display: flex;
+	align-items: center;
 }
 
 .user_account {
@@ -16,6 +17,31 @@
 	img {
 		width: 84px;
 	}
+}
+
+.user_content {
+	color: #BDBDBD;
+}
+
+.count_content {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	text-align: center;
+	margin-top: 43px;
+}
+
+.count_items {
+	font-weight: 700;
+	p {
+		color: #9E9E9E;
+		font-size: 14px;
+	}
+}
+
+.count_text {
+	color: #333A42;
+
 }
 
 .dropbtn {
