@@ -6,7 +6,8 @@
 					= image_tag 'photo-camera.svg', class: 'header_back'
 		.post
 			.post_detail
-				= image_tag @post.user.avatar_image
+				= link_to account_path(@post.user) do
+					= image_tag @post.user.avatar_image
 				%div
 					.post_name
 						= @post.user.account
@@ -35,12 +36,13 @@
 			.header_title
 				%h2 Comment
 	.comments_container
-.form_container
-	.comment_text_area.show_comment_form
-		=	image_tag 'Group.svg', class: 'sm'
-	.comment_text_area_after.hidden
-		=	text_area_tag :comment_box, '', class: 'sm'
-		.btn-secondary.add-comment-button
-			コメントを追加
+- if user_signed_in?
+	.form_container
+		.comment_text_area.show_comment_form
+			=	image_tag 'Group.svg', class: 'sm'
+		.comment_text_area_after.hidden
+			=	text_area_tag :comment_box, '', class: 'sm'
+			.btn-secondary.add-comment-button
+				コメントを追加
 
 = javascript_pack_tag 'post'

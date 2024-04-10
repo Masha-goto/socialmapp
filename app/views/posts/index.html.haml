@@ -19,16 +19,15 @@
 						.post_image
 							= image_tag(image)
 			.post_content_item
-				- if user_signed_in?
-					.post_like.active-like
-						= link_to post_path(post) do
-							= image_tag 'like-active.svg'
-						%span= post.likes.count
-					.post_group
-						= link_to post_path(post) do
-							= image_tag 'Group.svg'
-					.post_share
-						= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
+				.post_like.active-like
+					= link_to post_path(post) do
+						= image_tag 'like-active.svg'
+					%span= post.likes.count
+				.post_group
+					= link_to post_path(post) do
+						= image_tag 'Group.svg'
+				.post_share
+					= link_to (image_tag 'share.svg'), 'https://twitter.com/i/flow/login'
 			.post_title
 				%p= post.title
 				%p= post.content
