@@ -1,0 +1,18 @@
+.container
+	%header.header
+		.header_icon
+			- if !current_page?(root_path)
+				= link_to :back do
+					= image_tag 'arrow.svg', class: 'header_back'
+			.user_account
+				= user.account
+	.profile_icon.dropdown
+		= image_tag user.avatar_image
+		.dropdown-content.mini
+			- if user == current_user
+				= link_to 'Edit', edit_profile_path
+			- else
+				-if current_user&.has_followed?(user)
+					= link_to 'Unfollow', account_unfollows_path(user), data: { method: 'post' }
+				- else
+					= link_to 'Follow', account_follows_path(user), data: { method: 'post' }
