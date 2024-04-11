@@ -1,2 +1,9 @@
-%h1
-	home
+.home_image
+	= image_tag 'Rectangle.png'
+	.home_title
+		%h2= 'Social-app'
+.container
+	.link_content.btn-primary
+		= link_to '投稿一覧を見る', posts_path
+	.link_content.btn-primary
+		= link_to 'プロフィールを確認する', profile_path

@@ -3,6 +3,7 @@
 @import 'profile';
 @import 'post';
 @import 'comment';
+@import 'follow';
 
 html {
   word-spacing: 1px;
@@ -61,4 +62,29 @@ img {
 
 .hidden {
 	display: none;
+}
+
+.home_image {
+	position: relative;
+}
+
+.home_title {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	h2 {
+		color: #fff;
+		font-size: 30px;
+	}
+}
+
+.link_content {
+	margin-top: 50px;
+	a{
+		display: block;
+		color: #000;
+	}
 }
