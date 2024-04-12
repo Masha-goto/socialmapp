@@ -32,4 +32,5 @@
 			.count_text
 				= user.followings.count
 			%p= 'Following'
-
+.container
+	= render 'timelines/show', posts: @posts

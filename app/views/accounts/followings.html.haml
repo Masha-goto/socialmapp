@@ -5,5 +5,5 @@
 				= link_to :back do
 					= image_tag 'arrow.svg', class: 'header_back'
 			.header_title
-				%p= 'Followings'
+				= link_to 'Followings', root_path
 = render 'commons/follow', users: @users

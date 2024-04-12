@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.htmlz
 	root to: 'home#index'
 
+	resource :timeline, only: %i(show)
+
 	resources :accounts, only: %i(show) do
 		resources :follows, only: %i(create)
 		resources :unfollows, only: %i(create)
