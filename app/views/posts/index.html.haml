@@ -7,7 +7,8 @@
 	- @posts.each do |post|
 		.post
 			.post_detail
-				= image_tag post.user.avatar_image
+				= link_to account_path(post.user) do
+					= image_tag post.user.avatar_image
 				%div
 					.post_name
 						= post.user.account

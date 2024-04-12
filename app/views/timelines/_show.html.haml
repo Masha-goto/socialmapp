@@ -1,0 +1,7 @@
+- posts.each do |post|
+	.post
+		.post_content
+			- if post.images.attached?
+				- post.images.each do |image|
+					.post_image
+						= image_tag(image)

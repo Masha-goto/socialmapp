@@ -4,7 +4,7 @@
 			- if !current_page?(root_path)
 				= link_to 'Cance', :back, class: 'text_link'
 				.header_title
-					= 'Status'
+					= link_to 'Status', root_path
 				= link_to 'Post', posts_path, class: 'text_link'
 		.post
 			.post_form
