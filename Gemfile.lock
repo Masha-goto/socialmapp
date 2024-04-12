@@ -101,8 +101,16 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.1)
     erubi (1.12.0)
     erubis (2.7.0)
+    factory_bot (6.4.5)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -226,6 +234,23 @@ GEM
       railties (>= 5.2)
     rexml (3.2.6)
     rouge (4.2.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-rails (5.1.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.13.1)
     ruby_parser (3.21.0)
       racc (~> 1.5)
       sexp_processor (~> 4.16)
@@ -308,6 +333,8 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  factory_bot_rails
+  faker
   hamlit-rails
   html2haml
   jbuilder (~> 2.7)
@@ -318,6 +345,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 4.1)
   rails (~> 6.0.6, >= 6.0.6.1)
+  rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq
