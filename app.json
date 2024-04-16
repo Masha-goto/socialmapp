@@ -1,0 +1,16 @@
+{
+  "name": "social m app",
+  "description": "This is socialmapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/Masha-goto/socialmapp",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}
